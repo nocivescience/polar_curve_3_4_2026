@@ -13,7 +13,7 @@ float get_r(float theta, float t) {
 // --- FUNCIONES DE DIBUJO DE ESCENA ---
 
 void draw_polar_grid(sf::RenderWindow& window, sf::Vector2f center, float max_r, float scale) {
-    sf::Color grid_color(60, 60, 60);
+    sf::Color grid_color(160, 60, 60);
 
     // 1. Círculos concéntricos (Radio)
     for (int i = 1; i <= (int)max_r; ++i) {
@@ -32,7 +32,7 @@ void draw_polar_grid(sf::RenderWindow& window, sf::Vector2f center, float max_r,
         sf::VertexArray line(sf::PrimitiveType::Lines, 2);
         line[0] = {center, grid_color};
         line[1] = {{center.x + std::cos(angle) * max_r * scale, 
-                    center.y - std::sin(angle) * max_r * scale}, grid_color};
+                    center.y - std::sin(angle) * max_r * scale}, sf::Color::Blue};
         window.draw(line);
     }
 }
